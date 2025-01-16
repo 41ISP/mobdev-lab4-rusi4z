@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ITemperature, Temperature } from "../temperature/temperature";
-
+import { ICityRDO } from "../city/city";
 
 const axiosWeatherInstance = axios.create({
     baseURL: "https://api.openweathermap.org/data/2.5/forecast?q=Omsk&lang=ru&units=metric&appid=5fd59655896311dc6b576f585c3dfaf6"

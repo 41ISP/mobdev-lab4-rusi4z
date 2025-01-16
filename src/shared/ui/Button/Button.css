@@ -1,0 +1,7 @@
+.buttonStyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}

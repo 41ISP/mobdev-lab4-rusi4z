@@ -1,3 +1,5 @@
+import './Input.css'
+
 interface IInput {
     state: string,
     setState: React.Dispatch<React.SetStateAction<string>>;
@@ -5,11 +7,13 @@ interface IInput {
 
 const Input = ({ state, setState }: IInput) => {
 	return (
-		<input
-			type="text"
-			value={state}
-			onChange={(e) => setState(e.target.value)}
-		/>
+		<div className="inputStyle">
+			<input
+				type="text"
+				value={state}
+				onChange={(e) => setState(e.target.value)}
+			/>
+		</div>
 	);
 };
 
