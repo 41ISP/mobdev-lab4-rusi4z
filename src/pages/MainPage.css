@@ -3,5 +3,13 @@
     justify-content: center;
     text-align: center;
     margin: auto;
-    width: 100%;
+    width: 100vw;
+}
+
+.ButtonStyle{
+    width: auto;
+}
+
+.InputStyle{
+    width: 200px;
 }
