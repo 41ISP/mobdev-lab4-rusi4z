@@ -1,5 +1,5 @@
-export interface ICityRDO {
-    City: string;
-    Country: string;
-    Region: string;
-}
+// export interface ICityRDO {
+//     cityName: string;
+//     Country: string;
+//     Region: string;
+// }

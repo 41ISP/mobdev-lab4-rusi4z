@@ -1,19 +1,19 @@
 import './Input.css'
+// import { ICityRDO } from '../../city/city';
 
-interface IInput {
-    state: string,
+export interface ICityRDO {
+    cityName: string;
     setState: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Input = ({ state, setState }: IInput) => {
+const Input = ({ cityName, setState }: ICityRDO) => {
 	return (
-		<div className="inputStyle">
 			<input
+				className='inputStyle'
 				type="text"
-				value={state}
+				value={cityName}
 				onChange={(e) => setState(e.target.value)}
 			/>
-		</div>
 	);
 };
 
