@@ -13,10 +13,15 @@
 }
 
 .InputStyle{
-
+    width: auto;
+    display: flex;
 }
 
 .Entities{
     display: flex;
     align-items: center;
+}
+
+.backgroundMainPage{
+    
 }

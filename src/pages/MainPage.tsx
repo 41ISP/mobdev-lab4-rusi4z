@@ -17,8 +17,11 @@ const MainPage = () => {
     return (
         <div className="App">
 
-            <div className="Entities">
+            <div className="backgroundMainPage">
+                <p className="p1">{city}</p>
+            </div>
 
+            <div className="Entities">
                 <div className="InputStyle">
                     <Input cityName={city} setState={setCity}/>
                 </div>
@@ -26,7 +29,6 @@ const MainPage = () => {
                 <div className="ButtonStyle">
                     <Button type="submit" handleClick={onClick}>Посмотреть погоду</Button>
                 </div>
-                
             </div>
 
         </div>
