@@ -6,21 +6,27 @@ import weatherRequest from "../shared/api/api";
 import './MainPage.css'
 
 const MainPage = () => {
-    const [cityName, setCity] = useState(""); 
+    const [city, setCity] = useState(""); 
 
     const onClick = async () => {
-        const cityNameWeather = (await weatherRequest.cityReq);
+        const cityNameWeather = await weatherRequest.cityReq(city)
+
         console.log(cityNameWeather);
     }
 
     return (
         <div className="App">
-            <div className="InputStyle">
-                <Input cityName={cityName} setState={setCity}/>
-            </div>
 
-            <div className="ButtonStyle">
-                <Button type="submit" handleClick={onClick}>Посмотреть погоду</Button>
+            <div className="Entities">
+
+                <div className="InputStyle">
+                    <Input cityName={city} setState={setCity}/>
+                </div>
+
+                <div className="ButtonStyle">
+                    <Button type="submit" handleClick={onClick}>Посмотреть погоду</Button>
+                </div>
+                
             </div>
 
         </div>

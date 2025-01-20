@@ -4,12 +4,19 @@
     text-align: center;
     margin: auto;
     width: 100vw;
+    height: 100vh;
 }
 
 .ButtonStyle{
     width: auto;
+    display: flex;
 }
 
 .InputStyle{
-    width: 200px;
+
+}
+
+.Entities{
+    display: flex;
+    align-items: center;
 }
