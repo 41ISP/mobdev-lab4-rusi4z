@@ -3,6 +3,9 @@ import './Input.css'
 
 export interface ICityRDO {
     cityName: string;
+	main:string;
+	temp:string;
+	list: string;
     setState: React.Dispatch<React.SetStateAction<string>>;
 }
 

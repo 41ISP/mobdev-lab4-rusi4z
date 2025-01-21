@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Input from "../shared/ui/Input/Input";
+import { data, Link, useNavigate } from "react-router-dom";
+import Input, { ICityRDO } from "../shared/ui/Input/Input";
 import Button from "../shared/ui/Button/Button";
 import weatherRequest from "../shared/api/api";
 import './MainPage.css'
 
 const MainPage = () => {
-    const [city, setCity] = useState(""); 
+    const [city, setCity] = useState("");
+    const [weatherData, setWeatherData] = useState<ICityRDO[] | undefined>(undefined);
 
     const onClick = async () => {
         const cityNameWeather = await weatherRequest.cityReq(city)
@@ -16,14 +17,15 @@ const MainPage = () => {
 
     return (
         <div className="App">
-
-            <div className="backgroundMainPage">
-                <p className="p1">{city}</p>
-            </div>
+            {weatherData && (
+                <div className="backgroundMainPage">
+                    <p className="p1">{weatherData[0].list}</p>
+                </div>
+            )}
 
             <div className="Entities">
                 <div className="InputStyle">
-                    <Input cityName={city} setState={setCity}/>
+                    <Input cityName={city} setState={setCity} main={""} temp={""} list={""}/>
                 </div>
 
                 <div className="ButtonStyle">
