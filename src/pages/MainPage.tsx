@@ -21,7 +21,8 @@ const MainPage = () => {
         <div className="App">
             {weatherData && (
                 <div className="backgroundMainPage">
-                    <p className="p1">{weatherData.main.temp}</p>
+                    <p className="p1">Температура в {city} {weatherData.main.temp}</p>
+                    <p className="p2">Ощущается как: {weatherData.main.feels_like}</p>
                 </div>
             )}
 
