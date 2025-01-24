@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { data, Link, useNavigate } from "react-router-dom";
 import Input, { IInputProps } from "../shared/ui/Input/Input";
 import Button from "../shared/ui/Button/Button";
@@ -16,7 +16,7 @@ const MainPage = () => {
         setWeatherData(cityNameWeather);
         console.log(cityNameWeather);
     }
-
+    
     return (
         <div className="App">
             {weatherData && (
@@ -25,18 +25,18 @@ const MainPage = () => {
                     <p className="p2">Ощущается как: {weatherData.main.feels_like}</p>
                 </div>
             )}
+                <div className="Entities">
+                    <div className="InputStyle">
+                        <Input cityName={city} setState={setCity}/>
+                    </div>
 
-            <div className="Entities">
-                <div className="InputStyle">
-                    <Input cityName={city} setState={setCity}/>
+                    <div className="ButtonStyle">
+                        <Button type="submit" handleClick={onClick}>Посмотреть погоду</Button>
+                    </div>
                 </div>
-
-                <div className="ButtonStyle">
-                    <Button type="submit" handleClick={onClick}>Посмотреть погоду</Button>
-                </div>
-            </div>
-
         </div>
+
+
     )
 }
 
