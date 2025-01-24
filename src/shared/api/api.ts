@@ -1,6 +1,9 @@
 import axios from "axios";
 import { ITemperature, Temperature } from "../temperature/temperature";
-import { ICityRDO } from "../ui/Input/Input";
+import { IInputProps } from "../ui/Input/Input";
+//import { ICityReqRDO } from "../../entities/forecast/forecast.model";
+import { IWeatherRDO } from "../../entities/forecast/forecast.model";
+import { Main } from "../../entities/forecast/forecast.model";
 
 const axiosWeatherInstance = axios.create({
     baseURL: "https://api.openweathermap.org"
@@ -18,7 +21,7 @@ const weatherRequest = {
             return response.data
         },
         cityReq: async(cityName: string) =>{
-            const response = await axiosWeatherInstance.get<ICityRDO[]>(`data/2.5/forecast?q=${cityName}&lang=ru&units=metric&appid=5fd59655896311dc6b576f585c3dfaf6`,{
+            const response = await axiosWeatherInstance.get<IWeatherRDO>(`data/2.5/weather?&q=${cityName}&lang=ru&units=metric&appid=5fd59655896311dc6b576f585c3dfaf6`,{
                 withCredentials: false,
                 params:{
                     apikey: "2cbbc3d76457890139f4fd384cf18565",
@@ -28,7 +31,6 @@ const weatherRequest = {
             })
             return response.data
         }
-        
     }
 
 

@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { data, Link, useNavigate } from "react-router-dom";
-import Input, { ICityRDO } from "../shared/ui/Input/Input";
+import Input, { IInputProps } from "../shared/ui/Input/Input";
 import Button from "../shared/ui/Button/Button";
 import weatherRequest from "../shared/api/api";
 import './MainPage.css'
+import { IWeatherRDO } from "../entities/forecast/forecast.model";
 
 const MainPage = () => {
     const [city, setCity] = useState("");
-    const [weatherData, setWeatherData] = useState<ICityRDO[] | undefined>(undefined);
+    const [weatherData, setWeatherData] = useState<IWeatherRDO | undefined>(undefined);
 
     const onClick = async () => {
         const cityNameWeather = await weatherRequest.cityReq(city)
 
+        setWeatherData(cityNameWeather);
         console.log(cityNameWeather);
     }
 
@@ -19,13 +21,13 @@ const MainPage = () => {
         <div className="App">
             {weatherData && (
                 <div className="backgroundMainPage">
-                    <p className="p1">{weatherData[0].list}</p>
+                    <p className="p1">{weatherData.main.temp}</p>
                 </div>
             )}
 
             <div className="Entities">
                 <div className="InputStyle">
-                    <Input cityName={city} setState={setCity} main={""} temp={""} list={""}/>
+                    <Input cityName={city} setState={setCity}/>
                 </div>
 
                 <div className="ButtonStyle">

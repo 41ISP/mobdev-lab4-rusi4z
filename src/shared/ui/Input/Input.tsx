@@ -1,15 +1,12 @@
 import './Input.css'
 // import { ICityRDO } from '../../city/city';
 
-export interface ICityRDO {
+export interface IInputProps {
     cityName: string;
-	main:string;
-	temp:string;
-	list: string;
     setState: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Input = ({ cityName, setState }: ICityRDO) => {
+const Input = ({ cityName, setState }: IInputProps) => {
 	return (
 			<input
 				className='inputStyle'
