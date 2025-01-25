@@ -17,6 +17,18 @@ const MainPage = () => {
         console.log(cityNameWeather);
     }
     
+    const inputField = document.getElementById('backgroundMainPage') as HTMLInputElement;
+    const RSclearBtn = document.getElementById('clearBtn') as HTMLButtonElement;
+
+    const resetBtn = async () => { 
+        //await $('#backgroundMainPage').empty();
+
+        RSclearBtn.addEventListener('click', () => {
+            inputField.value = '';
+        });
+    }
+
+
     return (
         <div className="App">
             {weatherData && (
@@ -32,11 +44,10 @@ const MainPage = () => {
 
                     <div className="ButtonStyle">
                         <Button type="submit" handleClick={onClick}>Посмотреть погоду</Button>
+                        <button name="clearBtn" type="submit" onClick={resetBtn}>x</button>
                     </div>
                 </div>
         </div>
-
-
     )
 }
 
