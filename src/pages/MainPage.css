@@ -3,13 +3,28 @@
     justify-content: center;
     text-align: center;
     margin: auto;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
 }
 
 .ButtonStyle{
-    width: auto;
     display: flex;
+    font-family: Bahnschrift;
+    width: auto;
+    gap: 5px;
+}
+
+.buttonStyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clearBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .InputStyle{
@@ -17,14 +32,52 @@
     display: flex;
 }
 
-.Entities{
-    display: flex;
-    align-items: center;
+.inputStyle{
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 15px;
+    appearance: none;
+    border: solid 2.5px #7192BE;
+    background: var(--color-1);
+    font-family: Bahnschrift;
 }
 
-.backgroundMainPage{
+.Entities{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    margin: auto;
+    min-width: 100%;
+    gap: 145px;
+    flex-direction: column;
+    position: absolute;
+}
+
+.backgroundContainer{
+    border: solid 2.5px rgba(120, 175, 207, 0.637);
+    background: var(--color-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    flex-direction: column;
+    /* margin-left: 350px;
+    margin-right: 350px; */
+    min-width: 30%;
+    margin: auto;
+    font-family: Bahnschrift;
+}
+
+.title{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Bahnschrift;
+    position: absolute;
+    min-width: 100%;
+    margin-bottom: 270px;
 }
