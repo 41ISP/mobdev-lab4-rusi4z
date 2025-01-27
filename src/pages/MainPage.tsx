@@ -17,29 +17,21 @@ const MainPage = () => {
         console.log(cityNameWeather);
     }
     
-    const inputField = document.getElementById('backgroundMainPage') as HTMLInputElement;
-    const RSclearBtn = document.getElementById('clearBtn') as HTMLButtonElement;
-
     const resetBtn = async () => { 
-        await $('#backgroundMainPage').empty();
-
-        RSclearBtn.addEventListener('click', () => {
-            inputField.value = '';
-        });
+        setWeatherData(undefined);
     }
-
 
     return (
         <div className="App">
-
             <div className="title">Введите название города</div>
-
-            {weatherData && (
+            {weatherData && ( 
                 <div className="backgroundContainer">
-                    <p className="p1">Температура в городе: {city} {weatherData.main.temp}</p>
-                    <p className="p2">Ощущается как: {weatherData.main.feels_like}</p>
+                    <p className="p1">Температура в городе: {weatherData.name} {weatherData.main.temp}</p>
+                    <p className="p2">Ощущается как {weatherData.main.feels_like}</p>
+                    <p className="p3">Ветер: {weatherData.wind.speed} м/c.</p>
                 </div>
             )}
+
                 <div className="Entities">
                     <div className="InputStyle">
                         <Input cityName={city} setState={setCity}/>
@@ -47,7 +39,7 @@ const MainPage = () => {
 
                     <div className="ButtonStyle">
                         <Button type="submit" handleClick={onClick}>Посмотреть погоду</Button>
-                        <button name="clearBtn" className="clearBtn" type="submit" onClick={resetBtn}>x</button>
+                        <button className="clearBtn" type="button" onClick={resetBtn}>x</button>
                     </div>
                 </div>
         </div>

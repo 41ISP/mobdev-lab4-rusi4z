@@ -50,7 +50,7 @@
     justify-content:center;
     margin: auto;
     min-width: 100%;
-    gap: 145px;
+    gap: 195px;
     flex-direction: column;
     position: absolute;
 }
@@ -58,14 +58,14 @@
 .backgroundContainer{
     border: solid 2.5px rgba(120, 175, 207, 0.637);
     background: var(--color-1);
-    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
     flex-direction: column;
     /* margin-left: 350px;
     margin-right: 350px; */
-    min-width: 30%;
+    display: inline-block;
+    min-width: 25%;
     margin: auto;
     font-family: Bahnschrift;
 }
@@ -79,5 +79,5 @@
     font-family: Bahnschrift;
     position: absolute;
     min-width: 100%;
-    margin-bottom: 270px;
+    margin-bottom: 310px;
 }
